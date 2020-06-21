@@ -1,4 +1,9 @@
-import { FETCH_PRODUCTS, REMOVE_PRODUCT, ADD_NEW_PRODUCT } from "./types";
+import {
+  FETCH_PRODUCTS,
+  REMOVE_PRODUCT,
+  ADD_NEW_PRODUCT,
+  EDIT_PRODUCT_TITLE,
+} from "./types";
 
 const initialState = {
   productList: [],
@@ -17,6 +22,11 @@ const productsReducer = (state = initialState, action) => {
         productList: action.payload,
       };
     case REMOVE_PRODUCT:
+      return {
+        ...state,
+        productList: action.payload,
+      };
+    case EDIT_PRODUCT_TITLE:
       return {
         ...state,
         productList: action.payload,

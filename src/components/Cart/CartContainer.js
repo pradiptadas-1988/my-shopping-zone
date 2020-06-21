@@ -22,7 +22,9 @@ class CartContainer extends PureComponent {
                 {APP_CONSTANT.EMPTY_CART}
               </div>
             ) : (
-              <div>You have {cartItemList.length} product in cart</div>
+              <div className="col-sm-10 col-md-10 col-lg-10">
+                You have {cartItemList.length} product in cart
+              </div>
             ))}
           <hr />
           <CartList

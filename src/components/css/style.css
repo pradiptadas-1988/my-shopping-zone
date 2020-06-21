@@ -2,8 +2,17 @@ body{
 	font-family: "Helvetica Neue" !important;
 }
 
+.centre{
+	text-align:center;
+}
+
 .mainDiv{
-	height: 500px;
+	height: 450px;
+    overflow: auto;
+}
+
+.productDiv{
+	height: 670px;
     overflow: auto;
 }
 

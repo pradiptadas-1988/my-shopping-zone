@@ -33,7 +33,7 @@ const ProductList = ({ productList, handleAddToCart }) => {
       </div>
     ));
   return (
-    <div className="row item mainDiv">
+    <div className="row item productDiv">
       {productList && productList.length === 0
         ? APP_CONSTANT.LIST_EMPTY
         : productItems}

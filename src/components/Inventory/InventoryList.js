@@ -2,7 +2,11 @@ import React from "react";
 
 import APP_CONSTANT from "../../constant";
 
-const InventoryList = ({ productList, removeItemFromInventory }) => {
+const InventoryList = ({
+  productList,
+  removeItemFromInventory,
+  editProductDetail,
+}) => {
   const inventoryItems =
     productList &&
     productList.length > 0 &&
@@ -16,7 +20,9 @@ const InventoryList = ({ productList, removeItemFromInventory }) => {
                   type="text"
                   placeholder="Title Of Item"
                   value={product.productTitle}
-                  onChange={(e) => {}}
+                  onChange={(e) => {
+                    editProductDetail(product, e, "title");
+                  }}
                 />
               </div>
               <div className="col-sm-12 col-md-6 col-lg-6 padding0 margin5">
@@ -24,7 +30,9 @@ const InventoryList = ({ productList, removeItemFromInventory }) => {
                   type="number"
                   placeholder="Price"
                   value={product.productPrice}
-                  onChange={(e) => {}}
+                  onChange={(e) => {
+                    editProductDetail(product, e, "price");
+                  }}
                 />
               </div>
               <div className="col-sm-12 col-md-12 col-lg-12 padding0 margin5">
@@ -32,7 +40,9 @@ const InventoryList = ({ productList, removeItemFromInventory }) => {
                   type="text"
                   placeholder="Image Url"
                   value={product.productImageUrl}
-                  onChange={(e) => {}}
+                  onChange={(e) => {
+                    editProductDetail(product, e, "url");
+                  }}
                 />
               </div>
               <div className="col-sm-12 col-md-12 col-lg-12 padding0 margin5">
@@ -41,7 +51,9 @@ const InventoryList = ({ productList, removeItemFromInventory }) => {
                   cols="30"
                   placeholder="Product Description"
                   value={product.productDesc}
-                  onChange={(e) => {}}
+                  onChange={(e) => {
+                    editProductDetail(product, e, "desc");
+                  }}
                 />
               </div>
               <div className="col-sm-12 col-md-12 col-lg-12 padding0 margin5">

@@ -22,6 +22,10 @@ const App = () => {
           <Inventory />
         </div>
       </div>
+      <hr />
+      <footer>
+        <p className="centre">&copy; CopyRight</p>
+      </footer>
     </div>
   );
 };
