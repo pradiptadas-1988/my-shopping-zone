@@ -18,9 +18,15 @@ class InventoryContainer extends PureComponent {
   };
 
   _editProductDetail = (productEdited, e, editedKey) => {
-    const { editProducts, productList } = this.props;
+    const {
+      editProducts,
+      productList,
+      editCartItem,
+      cartItemList,
+    } = this.props;
     const newProduct = updateProduct(productEdited, editedKey, e.target.value);
     editProducts(productList, newProduct);
+    editCartItem(cartItemList, newProduct);
   };
 
   render() {

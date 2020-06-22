@@ -6,7 +6,7 @@ import {
   removeProductFromInventory,
   editProducts,
 } from "./inventory.actions";
-import { removeCartItemData } from "../Cart/cart.action";
+import { removeCartItemData, editCartItem } from "../Cart/cart.action";
 import { getProductList, getCartItems } from "../../selectors/selector";
 
 const mapStateToProps = (state) => ({
@@ -19,5 +19,6 @@ const Inventory = connect(mapStateToProps, {
   removeProductFromInventory,
   removeCartItemData,
   editProducts,
+  editCartItem,
 })(InventoryContainer);
 export default Inventory;

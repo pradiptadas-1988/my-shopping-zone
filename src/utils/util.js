@@ -37,17 +37,43 @@ export const updateProductItems = (productList, itemUpdated) => {
 
 export const updateProduct = (productEdited, editedKey, value) => {
   switch (editedKey) {
-    case "title":
-      return (productEdited.productTitle = value);
-    case "price":
-      return (productEdited.productPrice = parseFloat(value));
-    case "url":
-      return (productEdited.productImageUrl = value);
-    case "desc":
-      return (productEdited.productDesc = value);
+    case "title": {
+      productEdited.productTitle = value;
+      return productEdited;
+    }
+
+    case "price": {
+      productEdited.productPrice = parseFloat(value);
+      return productEdited;
+    }
+
+    case "url": {
+      productEdited.productImageUrl = value;
+      return productEdited;
+    }
+
+    case "desc": {
+      productEdited.productDesc = value;
+      return productEdited;
+    }
+
     default:
       return productEdited;
   }
+};
+
+export const updateCart = (cartItemList, productEdited) => {
+  let updatedCart = [];
+  cartItemList.length > 0 &&
+    cartItemList.forEach((item) => {
+      if (item.productId === productEdited.productId) {
+        productEdited.count = item.count;
+        updatedCart.push(productEdited);
+      } else {
+        updatedCart.push(item);
+      }
+    });
+  return updatedCart;
 };
 
 const generateProductId = () => {
